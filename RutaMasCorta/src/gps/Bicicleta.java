@@ -12,23 +12,31 @@ public class Bicicleta {
         boolean luces = false;
         String marca = "Orbea";
     }
-    
+
     public static String rutaCorta(int [] camino1, int [] camino2, int [] camino3)
     {
         int sum1 = 0;
         int sum2 = 0;
         int sum3 = 0;
-        
+
         for(int i=0; i<camino1.length; i++)
         {
             sum1 += camino1[i];
-            sum2 += camino2[i];
-            sum3 += camino3[i];
         }
-        
+
+        for(int j=0; j<camino2.length; j++)
+        {
+            sum2 += camino2[j];
+        }
+
+        for(int k=0; k<camino3.length; k++)
+        {
+            sum3 += camino3[k];
+        }
+
         if(sum1 < sum2 && sum1 < sum3)
         {
-            return "camino 1"; 
+            return "camino 1";
         }else if(sum2 < sum3 && sum2 < sum1)
         {
             return "camino 2";
@@ -48,7 +56,7 @@ public class Bicicleta {
                 return "caminos 1 y 2";
             }
         }
-        
+
     }
 
     public static void main(String[] args) {
